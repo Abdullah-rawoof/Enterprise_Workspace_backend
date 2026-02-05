@@ -18,9 +18,10 @@ const client = new OpenAI({
     apiKey: process.env.OPENROUTER_API_KEY || "sk-or-v1-...", // Fallback or Error
 });
 
-// Helper: Parse Documents
-async function parseDocuments() {
-    const docs = await Document.find();
+// Helper: Parse Documents (Scoped to Org)
+async function parseDocuments(ownerEmail) {
+    // SECURITY FIX: Only fetch documents owned by this admin (or staff's admin)
+    const docs = await Document.find({ uploadedBy: ownerEmail });
     let context = [];
 
     for (const doc of docs) {
@@ -117,10 +118,22 @@ router.post('/', verifyToken, async (req, res) => {
         // 1. Get Config
         const config = await LLMConfig.findOne() || new LLMConfig();
 
+        // Determine Org Owner (Admin Email)
+        let orgOwnerEmail = req.user.email;
+        if (req.user.role === 'staff') {
+            // If staff, look up their admin
+            const User = require('../models/User');
+            const staff = await User.findById(req.user.id);
+            if (staff && staff.adminId) {
+                const admin = await User.findById(staff.adminId);
+                if (admin) orgOwnerEmail = admin.email;
+            }
+        }
+
         // 2. Parallel: Web Search + Document Parsing
         const [webResults, allChunks] = await Promise.all([
             config.enableSearch ? performWebSearch(message) : [],
-            config.enableRAG ? parseDocuments() : []
+            config.enableRAG ? parseDocuments(orgOwnerEmail) : []
         ]);
 
         // 3. Retrieve

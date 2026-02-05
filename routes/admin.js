@@ -53,11 +53,10 @@ router.post('/upload', upload.single('file'), async (req, res) => {
             path: req.file.path,
             type: path.extname(req.file.originalname).substring(1),
             size: req.file.size,
-            uploadedBy: 'admin' // In real app, from token
+            uploadedBy: req.user.email // Store Admin Email as Owner
         });
 
-        // Trigger Log and potentially RAG indexing here (missing RAG service refactor for now)
-        // Note: keeping it simple for migration step.
+        // Trigger Log
 
         logAction('UPLOAD_SUCCESS', `Uploaded ${newDoc.name}`, { email: 'admin@org.com', role: 'admin' });
 
@@ -267,11 +266,8 @@ router.get('/feed', verifyToken, async (req, res) => {
         // Fetch Announcements from Admin
         const announcements = await ANNOUNCE.find({ author: adminEmail }).sort({ timestamp: -1 }).limit(10);
 
-        // Fetch Documents from Admin (assuming uploadedBy stores 'admin' or email, currently hardcoded 'admin' in upload route)
-        // In a real multi-tenant app, uploadedBy should be the admin's ID or Email. 
-        // For this fix, we'll fetch all docs for now or strict match if we update upload logic.
-        // Let's being permissive to ensure they see docs.
-        const docs = await DOC.find().sort({ uploadedAt: -1 }).limit(10);
+        // Fetch Documents strictly for this Organization
+        const docs = await DOC.find({ uploadedBy: adminEmail }).sort({ uploadedAt: -1 }).limit(10);
 
         // Combine
         const feed = [

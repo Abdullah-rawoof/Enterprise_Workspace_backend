@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { logAction } = require('../utils/logger');
 const Task = require('../models/Task');
-const verifyToken = require('../middleware/verifyToken');
+const verifyToken = require('../middleware/auth');
 
 // 1. Assign Task (Admin)
 router.post('/assign', verifyToken, async (req, res) => {

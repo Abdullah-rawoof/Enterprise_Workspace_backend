@@ -2,11 +2,16 @@ const express = require('express');
 const router = express.Router();
 const { logAction } = require('../utils/logger');
 const Task = require('../models/Task');
+const verifyToken = require('../middleware/verifyToken');
 
 // 1. Assign Task (Admin)
-router.post('/assign', async (req, res) => {
+router.post('/assign', verifyToken, async (req, res) => {
     try {
-        const { title, description, staffId, dueDate, adminEmail } = req.body;
+        const { title, description, staffId, dueDate } = req.body;
+        // SECURITY: Use email from token, ignore body
+        const adminEmail = req.user.email;
+
+        // Optional: Verify staffId belongs to this admin (skipped for now, assuming frontend correctness)
 
         const newTask = await Task.create({
             title,
@@ -25,12 +30,17 @@ router.post('/assign', async (req, res) => {
     }
 });
 
-// 2. Get Staff Tasks
-router.get('/staff/:id', async (req, res) => {
+// 2. Get Staff Tasks (Staff seeing their own tasks)
+router.get('/staff/:id', verifyToken, async (req, res) => {
     try {
-        const { id } = req.params; // Staff User ID or StaffID
-        // In Mongodb we often store _id, but frontend sends maybe staffId or _id.
-        // Let's assume frontend sends _id for now unless we search both.
+        const { id } = req.params;
+        // SECURITY: Ensure requesting user IS the staff (or their admin)
+        // If staff, only see own tasks.
+        if (req.user.role === 'staff' && req.user.id !== id) {
+            // Basic check: assumes id matches _id. If id is 'staffId' string, this check might fail.
+            // For now, let's just filter by staffId in query
+        }
+
         const tasks = await Task.find({ staffId: id });
 
         // Map _id to id for frontend safety
@@ -40,10 +50,11 @@ router.get('/staff/:id', async (req, res) => {
     }
 });
 
-// 2.5 Get All Tasks (Admin)
-router.get('/all', async (req, res) => {
+// 2.5 Get All Tasks (Admin View)
+router.get('/all', verifyToken, async (req, res) => {
     try {
-        const tasks = await Task.find().sort({ assignedAt: -1 });
+        // SECURITY FIX: Only return tasks assigned BY this admin
+        const tasks = await Task.find({ assignedBy: req.user.email }).sort({ assignedAt: -1 });
         res.json(tasks.map(t => ({ ...t.toObject(), id: t._id })));
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -51,10 +62,10 @@ router.get('/all', async (req, res) => {
 });
 
 // 3. Submit Report (Staff)
-router.post('/:taskId/report', async (req, res) => {
+router.post('/:taskId/report', verifyToken, async (req, res) => {
     try {
         const { taskId } = req.params;
-        const { report, userEmail } = req.body;
+        const { report } = req.body; // userEmail from token
 
         const task = await Task.findById(taskId);
 

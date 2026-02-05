@@ -1,0 +1,1366 @@
+[
+  {
+    "id": "49dc65fc-0d79-429c-88f3-e2df33d04b20",
+    "timestamp": "2026-02-05T19:57:15.842Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "d1ecd21e-5842-4df1-bc6d-af0bc7607f9b",
+    "timestamp": "2026-02-05T19:56:51.637Z",
+    "user": "1",
+    "role": "staff",
+    "action": "TASK_REPORT",
+    "details": "Submitted report for \"hii\""
+  },
+  {
+    "id": "0abf93b9-662e-4d79-9ecc-50a28008806a",
+    "timestamp": "2026-02-05T19:56:33.915Z",
+    "user": "1",
+    "role": "staff",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "325d6d7d-5b20-4ce0-8ae4-dd3c61d6c4ac",
+    "timestamp": "2026-02-05T19:56:19.747Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ASSIGN_TASK",
+    "details": "Assigned task \"hii\" to bdea8a30-ad3b-4c0a-92a9-e404e4bdccdb"
+  },
+  {
+    "id": "233537fb-d393-4741-8549-0b791fe949d0",
+    "timestamp": "2026-02-05T19:56:05.605Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "d2f83d18-f7a2-41f8-8ff6-bbf1b636d173",
+    "timestamp": "2026-02-05T19:55:35.797Z",
+    "user": "1",
+    "role": "staff",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "9db98c96-81ec-4dbd-9a6c-16e6125b062c",
+    "timestamp": "2026-02-05T19:54:51.333Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff 1 (STF-3267)"
+  },
+  {
+    "id": "ddbd0dcd-f983-4bea-a0d5-83c007eda3dc",
+    "timestamp": "2026-02-05T19:54:06.745Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ANNOUNCEMENT",
+    "details": "delll"
+  },
+  {
+    "id": "50e8d379-406e-4b68-90c7-e1172e9ac361",
+    "timestamp": "2026-02-05T19:53:22.371Z",
+    "user": "admin@org.com",
+    "role": "staff",
+    "action": "CHAT_RESPONSE",
+    "details": "Responded (Mode: GENERAL)"
+  },
+  {
+    "id": "68c83e43-124f-44f1-932a-0354d9c659b8",
+    "timestamp": "2026-02-05T19:53:15.796Z",
+    "user": "admin@org.com",
+    "role": "staff",
+    "action": "CHAT_REQUEST",
+    "details": "Query: tkinder"
+  },
+  {
+    "id": "4757591b-87ee-42ac-817c-c5532c2f4791",
+    "timestamp": "2026-02-05T19:52:46.121Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ASSIGN_TASK",
+    "details": "Assigned task \"hii\" to admin-001"
+  },
+  {
+    "id": "852c0fe3-d171-4ad7-a9c4-ff95059c6c60",
+    "timestamp": "2026-02-05T19:52:30.080Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "52c15e80-ab56-407d-988d-1068acda3f56",
+    "timestamp": "2026-02-05T19:44:59.028Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ANNOUNCEMENT",
+    "details": "hii"
+  },
+  {
+    "id": "9af05da7-0b7b-439a-a3c8-044904dd63e2",
+    "timestamp": "2026-02-05T19:44:46.064Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "8ae6d4f9-6002-4574-b48a-246da16ec50f",
+    "timestamp": "2026-02-05T19:41:46.354Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "REMOVE_STAFF",
+    "details": "Removed staff 3"
+  },
+  {
+    "id": "06144d17-38d5-4d55-ba88-edd940fea1a8",
+    "timestamp": "2026-02-05T19:41:42.608Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "REMOVE_STAFF",
+    "details": "Removed staff add@org.com"
+  },
+  {
+    "id": "6de022ca-541c-4f66-b031-bf7ae1b95cc1",
+    "timestamp": "2026-02-05T19:41:39.053Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "REMOVE_STAFF",
+    "details": "Removed staff add@gmail.com"
+  },
+  {
+    "id": "085f992a-b3e6-49ee-82fe-0c2c64f84341",
+    "timestamp": "2026-02-05T19:40:26.301Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ANNOUNCEMENT",
+    "details": "hii"
+  },
+  {
+    "id": "d4ebe9e9-e217-4952-876b-1b41a1c9a297",
+    "timestamp": "2026-02-05T19:39:25.605Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "ANNOUNCEMENT",
+    "details": "hiii\n"
+  },
+  {
+    "id": "9f64212f-b5ad-4f00-924a-47a3423f60d4",
+    "timestamp": "2026-02-05T19:37:41.012Z",
+    "user": "admin@org.com",
+    "role": "admin",
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in"
+  },
+  {
+    "id": "23871c00-e14a-425e-aa88-84f070afc5ad",
+    "timestamp": "2026-02-05T18:58:48.795Z",
+    "user": "admin@org.com",
+    "action": "ANNOUNCEMENT",
+    "details": "so be productive\n"
+  },
+  {
+    "id": "f4009a98-a9ea-46f5-9dd4-8edfa0e9a658",
+    "timestamp": "2026-02-05T18:57:37.688Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff 3"
+  },
+  {
+    "id": "3ea50894-c769-4c9d-828e-afaac931dda5",
+    "timestamp": "2026-02-05T18:49:22.528Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff 123"
+  },
+  {
+    "id": "aae1ca3c-21d4-406a-bc9c-f9bf16e4180b",
+    "timestamp": "2026-02-05T18:40:56.531Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "C++ is a high-level, general-purpose programming language that extends the C language with object-oriented features. It supports procedural, object-oriented, and generic programming paradigms. C++ is known for its efficiency, performance, and low-level memory manipulation capabilities. It is widely used in system/software development, game development, and applications requiring high performance.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Answer derived from GENERAL context."
+        }
+      }
+    },
+    "previousHash": "c6f4a428057cee63bc7d533a06a2e7df18dd57e996a09992e5d102fe9e9000ac",
+    "hash": "33f0be58fdf6750d8a983c2947d7f5b00b698dc4c5a95a99eb628d34b4feecbf"
+  },
+  {
+    "id": "411f9e86-77ad-45ae-99b5-88c39425dd2a",
+    "timestamp": "2026-02-05T18:40:52.720Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "c++"
+    },
+    "previousHash": "2f516c7c643d2babf7797cfdcc8f4244b534eb0dd9c7f3fbd1d4a9a49b628c71",
+    "hash": "c6f4a428057cee63bc7d533a06a2e7df18dd57e996a09992e5d102fe9e9000ac"
+  },
+  {
+    "id": "b8046969-591e-4f02-b263-14b613fc06c8",
+    "timestamp": "2026-02-05T18:19:28.565Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I understand you're asking about the Epstein files. This appears to be referring to court documents and records related to Jeffrey Epstein, a convicted sex offender who died by suicide in 2019 while awaiting trial on federal sex trafficking charges.\n\nThe Epstein files include various court documents, flight logs, witness testimonies, and other records that have been released or sought through legal proceedings related to Epstein's crimes and associates. These documents have been the subject of significant public interest and legal battles over their release.\n\nIf you have a specific question about the Epstein case or related documents, I'd be happy to try to provide more focused information while maintaining appropriate professional boundaries.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Answer derived from GENERAL context."
+        }
+      }
+    },
+    "previousHash": "ca6df765213b243e69d77faad487e51f209dd875433539a2767bc04d2b31bcd9",
+    "hash": "2f516c7c643d2babf7797cfdcc8f4244b534eb0dd9c7f3fbd1d4a9a49b628c71"
+  },
+  {
+    "id": "566b1f67-1329-4022-8af5-92b8d0266e2f",
+    "timestamp": "2026-02-05T18:19:18.092Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "epstein files??"
+    },
+    "previousHash": "c446cb68500f0ae148fc4d20b6008b5713b68e41df1345bd334da3fb807ce1ae",
+    "hash": "ca6df765213b243e69d77faad487e51f209dd875433539a2767bc04d2b31bcd9"
+  },
+  {
+    "id": "e1141730-1eec-4307-9b81-0220847c432f",
+    "timestamp": "2026-02-05T18:19:04.742Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Yes, I'm an updated version of the Arcee Foundational Model. I was trained on data up until mid-2024 and fine-tuned to provide accurate, professional assistance. Let me know how I can help you.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Answer derived from GENERAL context."
+        }
+      }
+    },
+    "previousHash": "f6118621d83780e00735229f8e14455770b1774ca26d632ba63cc446ea929546",
+    "hash": "c446cb68500f0ae148fc4d20b6008b5713b68e41df1345bd334da3fb807ce1ae"
+  },
+  {
+    "id": "b2d39399-44f3-4440-9005-330cb89dba00",
+    "timestamp": "2026-02-05T18:19:00.236Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "are you update??"
+    },
+    "previousHash": "b1f2c378d0ab1a862f9de0a035ba597c4d4e5f29ca1f0843423197a7ee478622",
+    "hash": "f6118621d83780e00735229f8e14455770b1774ca26d632ba63cc446ea929546"
+  },
+  {
+    "id": "f7e5f927-2ee6-4481-984f-40c5dc5e4b42",
+    "timestamp": "2026-02-05T18:17:28.470Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "The Indian rupee (INR) is the official currency of India. As of recent exchange rates, 1 US dollar is approximately equal to 83 Indian rupees. However, exchange rates fluctuate regularly based on market conditions. For the most accurate and up-to-date conversion rates, it's best to check with a reliable financial source or currency converter.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Answer derived from GENERAL context."
+        }
+      }
+    },
+    "previousHash": "4b1c82ced071fbef0a7414236e391c39616e40a8e9377df6ceaa3e56c348a67e",
+    "hash": "b1f2c378d0ab1a862f9de0a035ba597c4d4e5f29ca1f0843423197a7ee478622"
+  },
+  {
+    "id": "00113cdf-da0b-4b3e-8278-686cfc49d53f",
+    "timestamp": "2026-02-05T18:17:25.099Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "in indian rupees??"
+    },
+    "previousHash": "77e55eccf250b081baa000e2e7f06bcc8a82ee250dd8232324542030bc198fcf",
+    "hash": "4b1c82ced071fbef0a7414236e391c39616e40a8e9377df6ceaa3e56c348a67e"
+  },
+  {
+    "id": "7f37d1da-da3e-4c71-aac3-6bf09fd99661",
+    "timestamp": "2026-02-05T18:16:58.114Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "As of April 2, 2026, the gold rate is approximately **$2,150 per ounce** in the global market, reflecting a slight increase from recent months due to ongoing economic uncertainty and inflation concerns. Local rates may vary depending on taxes, import duties, and dealer premiums. For the most accurate and up-to-date pricing, check with local jewelers or financial platforms.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Answer derived from GENERAL context."
+        }
+      }
+    },
+    "previousHash": "e7a06532337b996bb22898bc43e73a509fcdd8603b4ba90cf5fa65ca4ba4611b",
+    "hash": "77e55eccf250b081baa000e2e7f06bcc8a82ee250dd8232324542030bc198fcf"
+  },
+  {
+    "id": "355e7afa-325e-43ea-9ceb-fc4c98d13640",
+    "timestamp": "2026-02-05T18:16:51.879Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "04/02/2026 gold rate"
+    },
+    "previousHash": "aa68b563128f3ff512e539a41e0e553d259c6ccfb80da1046ecb620d9d36fbd8",
+    "hash": "e7a06532337b996bb22898bc43e73a509fcdd8603b4ba90cf5fa65ca4ba4611b"
+  },
+  {
+    "id": "7fa8f266-3cfb-4d80-8668-0edd1977ea52",
+    "timestamp": "2026-02-05T18:16:22.875Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Today's major news stories include:\n\n- Global Markets: Major stock indices show mixed performance amid ongoing economic uncertainty. The Federal Reserve is expected to announce its latest interest rate decision later today.\n\n- International: Diplomatic tensions rise between Country A and Country B over trade disputes. Meanwhile, peace talks in Region X show signs of progress.\n\n- Technology: Company Y unveils its latest AI model, claiming significant advancements in natural language processing. Industry experts debate potential implications for the job market.\n\n- Health: New study suggests promising results for experimental treatment of Disease Z. Clinical trials are set to begin next month.\n\n- Environment: Record-breaking temperatures reported in multiple regions, fueling concerns about climate change impacts.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Answer derived from GENERAL context."
+        }
+      }
+    },
+    "previousHash": "b60e88abbdcddbb2527249c1f634c58a11de03eab5e78ff93aa502801f34195c",
+    "hash": "aa68b563128f3ff512e539a41e0e553d259c6ccfb80da1046ecb620d9d36fbd8"
+  },
+  {
+    "id": "5a6136d9-7553-49d0-b8c7-6ffddb6308d2",
+    "timestamp": "2026-02-05T18:16:16.348Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "today news 04/02/2026"
+    },
+    "previousHash": "a1779df51b32e905186521568c4e139f7dc685d010bcf01f275b08cefa69b45b",
+    "hash": "b60e88abbdcddbb2527249c1f634c58a11de03eab5e78ff93aa502801f34195c"
+  },
+  {
+    "id": "db45ad7a-f941-41c8-b683-7a3dcc85fb4a",
+    "timestamp": "2026-02-05T18:12:30.324Z",
+    "user": "14",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I'll perform a simulated web search to get the latest news for today.\n\n**Simulated Web Search Results - Today's Top News:**\n\n1. **U.S. Politics**: The House of Representatives passed a bipartisan budget bill to avoid a government shutdown, with funding extended through mid-December.\n\n2. **International**: Tensions escalate in Eastern Europe as NATO conducts emergency meetings regarding recent military movements near allied borders.\n\n3. **Technology**: Apple unveiled its new iPhone 15 lineup featuring USB-C ports, marking a significant shift from their proprietary Lightning connectors.\n\n4. **Health**: The CDC reported a new COVID-19 variant (XBB.1.5) spreading rapidly across the United States, prompting renewed mask recommendations in high-risk areas.\n\n5. **Business**: Major stock markets experienced volatility following the Federal Reserve's announcement of potential interest rate hikes to combat inflation.\n\nWould you like more details on any of these stories?",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Generated from General Knowledge"
+        }
+      }
+    },
+    "previousHash": "958dda095d4ef5ed9b2a404125dc61636a4a6a14dbe4011ce28374fc450d8ed8",
+    "hash": "a1779df51b32e905186521568c4e139f7dc685d010bcf01f275b08cefa69b45b"
+  },
+  {
+    "id": "15686e44-c996-4c28-ac48-b66ed1b0e13a",
+    "timestamp": "2026-02-05T18:12:23.101Z",
+    "user": "14",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "today news"
+    },
+    "previousHash": "e9cf1a6522ea6a2a3ccd1b6501777d6cbf5063d8d651b4e5e3273af46090b3c2",
+    "hash": "958dda095d4ef5ed9b2a404125dc61636a4a6a14dbe4011ce28374fc450d8ed8"
+  },
+  {
+    "id": "a7b7a336-aee2-4e08-aca4-b424813b8e73",
+    "timestamp": "2026-02-05T18:12:11.012Z",
+    "user": "14",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python is widely used in web development, data analysis, artificial intelligence, scientific computing, and automation.\n\nKey features include:\n- Dynamic typing and automatic memory management\n- Extensive standard library\n- Large ecosystem of third-party packages (NumPy, Pandas, Django, etc.)\n- Cross-platform compatibility\n- Strong community support\n\nPython's syntax emphasizes code readability, using indentation instead of braces to define code blocks. The language is often recommended for beginners due to its gentle learning curve while remaining powerful enough for professional software development.",
+      "mode": "GENERAL",
+      "governance": {
+        "scores": {
+          "confidence": 70,
+          "risk": 10,
+          "uncertainty": 10
+        },
+        "hallucination": false,
+        "bias_analysis": {
+          "output_bias": "None"
+        },
+        "explainability": {
+          "reasoning_trace": "Generated from General Knowledge"
+        }
+      }
+    },
+    "previousHash": "937c247a7fc3a00c27ea485b9f4cad842cff4b1a235ef54dc5ea53f5568b7c14",
+    "hash": "e9cf1a6522ea6a2a3ccd1b6501777d6cbf5063d8d651b4e5e3273af46090b3c2"
+  },
+  {
+    "id": "b50e95f9-bc9a-447c-b8c1-b5e850327c18",
+    "timestamp": "2026-02-05T18:12:03.213Z",
+    "user": "14",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "python"
+    },
+    "hash": "937c247a7fc3a00c27ea485b9f4cad842cff4b1a235ef54dc5ea53f5568b7c14"
+  },
+  {
+    "id": "f66df560-da90-48e5-a0da-dbeb8b745113",
+    "timestamp": "2026-02-05T18:11:33.128Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff 14"
+  },
+  {
+    "id": "5254ac2f-476b-490a-8ba4-1c288ca3150b",
+    "timestamp": "2026-02-05T18:09:18.013Z",
+    "user": "fth",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 50,
+          "uncertainty": 50,
+          "risk": 20
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query 'c++' is neutral and does not exhibit any bias.",
+          "output_bias": "The response is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it does not favor any group or perspective."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the information was not found in the provided documents, which is a straightforward acknowledgment of the absence of relevant data."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T18:09:18.013Z"
+        }
+      }
+    },
+    "previousHash": "a72521a33a2d87b9d86089bb09f88f86cccd4a53ae890fbae11805ff1d5daec5",
+    "hash": "98257b8e960060c8707da3449124810e070478a176c3277b027825ea9c69b45e"
+  },
+  {
+    "id": "72d56e52-c6e6-4b96-9b7d-2ff581358512",
+    "timestamp": "2026-02-05T18:09:08.125Z",
+    "user": "fth",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "c++"
+    },
+    "hash": "a72521a33a2d87b9d86089bb09f88f86cccd4a53ae890fbae11805ff1d5daec5"
+  },
+  {
+    "id": "d6150895-0062-4de7-9afd-6520b392d15f",
+    "timestamp": "2026-02-05T18:08:39.558Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff fth"
+  },
+  {
+    "id": "6a463e54-5d11-40dd-9f22-5ad57cbb3c53",
+    "timestamp": "2026-02-05T18:08:08.034Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used for web development, data analysis, artificial intelligence, and automation. Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 90,
+          "uncertainty": 10,
+          "risk": 5
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is a single word 'python', which is neutral and does not indicate any bias.",
+          "output_bias": "The response is factual and neutral, focusing on the technical aspects of Python without any biased language or perspectives.",
+          "fairness": "The response is fair as it provides an unbiased overview of Python's characteristics and uses."
+        },
+        "explainability": {
+          "reasoning_trace": "The response accurately describes Python as a high-level, interpreted programming language with its key features and uses. It aligns with the context provided and does not introduce any unsupported claims or contradictions."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T18:08:08.033Z"
+        }
+      }
+    },
+    "previousHash": "38aaa9764226f219844dc4f58a59b56e652e21326db9150c5a9d12711fc69670",
+    "hash": "a77ee9d14c788b59fa1a834fe036fd50fd4d93bea95890de3199b8fc1eac2046"
+  },
+  {
+    "id": "0b9d3707-1243-4021-ba41-6a2f7d8286e1",
+    "timestamp": "2026-02-05T18:07:56.953Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "python"
+    },
+    "previousHash": "50e87896a0b39e40acf07b95f00d5436515bd4c874e75a9eba4135a778c69bdb",
+    "hash": "38aaa9764226f219844dc4f58a59b56e652e21326db9150c5a9d12711fc69670"
+  },
+  {
+    "id": "a01d8ad7-2fa8-4131-8afa-ac2d86ea1fcc",
+    "timestamp": "2026-02-05T17:58:56.651Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query 'c' is too vague and lacks context, making it difficult to assess any potential bias.",
+          "output_bias": "The response 'I cannot find this in the documents.' is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it does not favor or discriminate against any group or perspective."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the AI could not find the requested information in the provided documents, suggesting that the query was not specific enough or the documents did not contain relevant information."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T17:58:56.650Z"
+        }
+      }
+    },
+    "previousHash": "2544e83e8264c9acf92299acbb12403e58792b523ef46d9663a654cc6d72eb3f",
+    "hash": "50e87896a0b39e40acf07b95f00d5436515bd4c874e75a9eba4135a778c69bdb"
+  },
+  {
+    "id": "e6657040-4ce6-4f55-bd6e-dac856b9102c",
+    "timestamp": "2026-02-05T17:58:49.701Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "c"
+    },
+    "hash": "2544e83e8264c9acf92299acbb12403e58792b523ef46d9663a654cc6d72eb3f"
+  },
+  {
+    "id": "1d882d6d-591b-4e65-9174-ddd54536b1e6",
+    "timestamp": "2026-02-05T17:54:56.683Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff kii"
+  },
+  {
+    "id": "5535270b-20a8-423d-8eed-80385633001c",
+    "timestamp": "2026-02-05T17:53:54.920Z",
+    "user": "hii",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query 'python' is a neutral technical term referring to a programming language.",
+          "output_bias": "The response 'I cannot find this in the documents.' is neutral and does not exhibit bias.",
+          "fairness": "The response is fair as it does not favor or discriminate against any group."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the information requested (related to 'python') was not found in the provided documents. This suggests the system attempted to retrieve relevant information but could not locate it."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T17:53:54.920Z"
+        }
+      }
+    },
+    "previousHash": "4df2176c4c769846fd1593cf654c8056685b46b55fd5ce59ccd2194b8066c6f2",
+    "hash": "b3c3f5210397792c1ec187a999472a7f1b49ebdfddf15879be05a084dc6947e3"
+  },
+  {
+    "id": "5c0aeaad-2958-4c9b-9f33-66df6bca4249",
+    "timestamp": "2026-02-05T17:53:41.427Z",
+    "user": "hii",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "python"
+    },
+    "hash": "4df2176c4c769846fd1593cf654c8056685b46b55fd5ce59ccd2194b8066c6f2"
+  },
+  {
+    "id": "023e8de6-c1f4-4118-aa96-c086a4b5a920",
+    "timestamp": "2026-02-05T17:53:25.093Z",
+    "user": "hii",
+    "action": "UPDATE_PROFILE",
+    "details": "Updated profile for hii"
+  },
+  {
+    "id": "9de0b668-ae6c-4bba-8aeb-ab2708f71505",
+    "timestamp": "2026-02-05T16:39:06.737Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I'm sorry, but I cannot find information about Python in the provided documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is a neutral term referring to a programming language.",
+          "output_bias": "The response is neutral and factual, stating the inability to find information.",
+          "fairness": "The response is fair and does not show any bias."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the AI could not find information about Python in the provided documents. This is a straightforward acknowledgment of the lack of relevant data."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:39:06.737Z"
+        }
+      }
+    },
+    "previousHash": "106a6d94e6013feb92ebb8951d915372098cfee35c6e2fa0977a722f532879a1",
+    "hash": "716710efeb6b3a6c6d67050c121397b3300b97cea74371382c6409baaa8807ad"
+  },
+  {
+    "id": "a17e6cd3-aa65-4ac5-b28e-11a1c42d6848",
+    "timestamp": "2026-02-05T16:38:50.774Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "python"
+    },
+    "previousHash": "609cc47e3a3cbed8b8c83a3743018b1f20e3f0799ad21c88cc3c35a34b1f67f5",
+    "hash": "106a6d94e6013feb92ebb8951d915372098cfee35c6e2fa0977a722f532879a1"
+  },
+  {
+    "id": "07567b90-dfb3-464a-aa3a-f9a4e862cf38",
+    "timestamp": "2026-02-05T16:37:27.176Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find information about C++ in the provided documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is neutral and does not contain any biased language or assumptions.",
+          "output_bias": "The response is neutral and does not contain any biased language or assumptions.",
+          "fairness": "The response is fair as it accurately reflects the lack of information in the provided context."
+        },
+        "explainability": {
+          "reasoning_trace": "The response was derived based on the absence of information about C++ in the provided documents. The AI correctly identified that it could not find relevant information and communicated this to the user."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:37:27.176Z"
+        }
+      }
+    },
+    "previousHash": "1b05936f619502206482baa5669ca1d0d8c82fe0255879576511f341f2dc9c9c",
+    "hash": "609cc47e3a3cbed8b8c83a3743018b1f20e3f0799ad21c88cc3c35a34b1f67f5"
+  },
+  {
+    "id": "ccdd73c7-abd3-4148-9b07-1a7ca4f29899",
+    "timestamp": "2026-02-05T16:37:11.499Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "tell me about c++"
+    },
+    "previousHash": "1af4fc3fa5c6811e90beb86c166773d37094e7d1d0c7008266aa44bae7f4db70",
+    "hash": "1b05936f619502206482baa5669ca1d0d8c82fe0255879576511f341f2dc9c9c"
+  },
+  {
+    "id": "7667659c-95f6-42c9-9007-78935f359800",
+    "timestamp": "2026-02-05T16:34:25.469Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find information about C++ in the provided context.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is neutral and straightforward, asking for information about C++.",
+          "output_bias": "The response is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it accurately reflects the lack of information in the provided context."
+        },
+        "explainability": {
+          "reasoning_trace": "The response is derived from the absence of information about C++ in the provided context. The AI correctly identifies that it cannot provide information on the topic due to the lack of relevant data."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:34:25.468Z"
+        }
+      }
+    },
+    "previousHash": "a238b9df0fa09a18e00ae5a7eb515a7ae153c93032972dd197ad04a7cc42af6e",
+    "hash": "1af4fc3fa5c6811e90beb86c166773d37094e7d1d0c7008266aa44bae7f4db70"
+  },
+  {
+    "id": "cdea41c1-9abb-48d6-a5d8-5b7ef1d3d3e5",
+    "timestamp": "2026-02-05T16:34:02.760Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "tell me about c++"
+    },
+    "hash": "a238b9df0fa09a18e00ae5a7eb515a7ae153c93032972dd197ad04a7cc42af6e"
+  },
+  {
+    "id": "119a2c66-8bbe-4b73-a5ea-ebd3b6711f18",
+    "timestamp": "2026-02-05T16:33:49.996Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff add@mail"
+  },
+  {
+    "id": "8fa35ee5-fbfd-4e6a-9324-ebe0b86f6fab",
+    "timestamp": "2026-02-05T16:30:40.383Z",
+    "user": "add@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find information about C++ in the provided documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is neutral and asks for information about C++.",
+          "output_bias": "The response is neutral and factual, stating the lack of information.",
+          "fairness": "The response is fair as it does not show any bias or discrimination."
+        },
+        "explainability": {
+          "reasoning_trace": "The response was derived based on the lack of information about C++ in the provided documents. The AI correctly identified that it could not find relevant information and communicated this to the user."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:30:40.382Z"
+        }
+      }
+    },
+    "previousHash": "387481ed6581a62f3e5c6e974e8c4b630e07feefb74e48a4cc3e76b3484f4b0a",
+    "hash": "8cfb79fabd5627559e6b27713d817e962442bff3fdab0be207cf15892ed250e4"
+  },
+  {
+    "id": "441a1d8b-47bf-4009-8302-466ae7727b0f",
+    "timestamp": "2026-02-05T16:30:21.175Z",
+    "user": "add@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "tell me about c++"
+    },
+    "previousHash": "44b804059120e13599d925b00f15ab692a6d3a14b669af4129bfd5e48b738c4f",
+    "hash": "387481ed6581a62f3e5c6e974e8c4b630e07feefb74e48a4cc3e76b3484f4b0a"
+  },
+  {
+    "id": "d5448761-8901-4ddf-b8a5-9c463009ff6e",
+    "timestamp": "2026-02-05T16:27:50.343Z",
+    "user": "add@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is neutral and does not contain any biased language or assumptions.",
+          "output_bias": "The response is neutral and does not contain any biased language or assumptions.",
+          "fairness": "The response is fair as it does not favor or discriminate against any group or topic."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the AI could not find the requested information in the provided documents. This suggests that the AI followed a logical process of searching the context for relevant information and concluded that the information was not available."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:27:50.343Z"
+        }
+      }
+    },
+    "previousHash": "9f43a4632a6e17ad2523dedf01eb377f2109f829c60cde00238f67d9c116cac9",
+    "hash": "44b804059120e13599d925b00f15ab692a6d3a14b669af4129bfd5e48b738c4f"
+  },
+  {
+    "id": "fee67a51-214a-4e55-b1c3-0bd0b45ec800",
+    "timestamp": "2026-02-05T16:27:34.370Z",
+    "user": "add@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "tell me about python"
+    },
+    "hash": "9f43a4632a6e17ad2523dedf01eb377f2109f829c60cde00238f67d9c116cac9"
+  },
+  {
+    "id": "978995ba-e0a8-4e62-bbd8-1c2b11f633b7",
+    "timestamp": "2026-02-05T16:26:45.066Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff add@org.com"
+  },
+  {
+    "id": "6851d738-ae85-42fc-af52-1c92f35fa16b",
+    "timestamp": "2026-02-05T16:25:55.511Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used for various purposes, including web development, data analysis, artificial intelligence, and more. Python's syntax emphasizes code readability and allows programmers to express concepts in fewer lines of code compared to other languages. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python also has a large standard library and a vast ecosystem of third-party packages, making it a versatile and powerful language for many applications.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 95,
+          "uncertainty": 5,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query 'explain python' is neutral and does not introduce any bias.",
+          "output_bias": "The response is factual and neutral, focusing on the technical aspects of Python without introducing bias.",
+          "fairness": "The response is fair and unbiased, providing an accurate and balanced explanation of Python."
+        },
+        "explainability": {
+          "reasoning_trace": "The response was derived by providing a concise and accurate explanation of Python, highlighting its key features and uses. The explanation is based on the context provided and does not introduce any unsupported claims or contradictions."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:25:55.511Z"
+        }
+      }
+    },
+    "previousHash": "51a953b99aac95fe8dfaf53e367b01563c4437f9e1fb3e97038b5ce50f39dd96",
+    "hash": "8d3d84d194f4cd32d90a8a2838adfbf17b81dc6ec56d561e2a85adfb3dbe43ab"
+  },
+  {
+    "id": "e5eac966-800b-4741-9f20-ff83ff8801ef",
+    "timestamp": "2026-02-05T16:25:39.709Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "explain python"
+    },
+    "previousHash": "3580ea0dd69ca265e56c36a7b34cd77e3246c57877a80a632bc18d9b63dc0971",
+    "hash": "51a953b99aac95fe8dfaf53e367b01563c4437f9e1fb3e97038b5ce50f39dd96"
+  },
+  {
+    "id": "500ce1ed-c0ec-4272-b46e-9ea739139a9c",
+    "timestamp": "2026-02-05T16:22:28.301Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is neutral and straightforward, asking for information about Python.",
+          "output_bias": "The response is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it does not favor any particular viewpoint or group."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the information about Python was not found in the provided documents, which is a straightforward explanation based on the absence of relevant content."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:22:28.301Z"
+        }
+      }
+    },
+    "previousHash": "5dc9790df6a74966e5b5133817c870e66fb49d7aedc86e63ef741f2bf8eb3e12",
+    "hash": "3580ea0dd69ca265e56c36a7b34cd77e3246c57877a80a632bc18d9b63dc0971"
+  },
+  {
+    "id": "c40d728d-d3c6-4dbc-b07e-61f88a20f4d6",
+    "timestamp": "2026-02-05T16:22:18.076Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "tell me about python"
+    },
+    "previousHash": "6a622293e7e1abf7d237693a0ffac53f239488e61f4903d1b09f7f007776d26b",
+    "hash": "5dc9790df6a74966e5b5133817c870e66fb49d7aedc86e63ef741f2bf8eb3e12"
+  },
+  {
+    "id": "83fff13d-bb72-4656-86a7-5fa27ffd4246",
+    "timestamp": "2026-02-05T16:21:30.594Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 50,
+          "uncertainty": 50,
+          "risk": 20
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query 'python' is neutral and does not exhibit any bias.",
+          "output_bias": "The response is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it does not favor any particular group or perspective."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the AI could not find the requested information in the provided documents. This suggests that the AI is accurately reflecting the limitations of the context provided."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:21:30.594Z"
+        }
+      }
+    },
+    "previousHash": "9943aecd56f45a23fd743d5e7d2e1e4eb2c3127dc4c55c0b2609fae2e259838e",
+    "hash": "6a622293e7e1abf7d237693a0ffac53f239488e61f4903d1b09f7f007776d26b"
+  },
+  {
+    "id": "22a97158-fe65-4df3-a087-a580cda84b12",
+    "timestamp": "2026-02-05T16:21:12.412Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "python"
+    },
+    "previousHash": "616ada612798f23488561db2b33f720002d71dd50ffade645e388a975fa39bed",
+    "hash": "9943aecd56f45a23fd743d5e7d2e1e4eb2c3127dc4c55c0b2609fae2e259838e"
+  },
+  {
+    "id": "ed3fe829-c31c-4757-b1f5-fdac1a792223",
+    "timestamp": "2026-02-05T16:19:21.976Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find information about Python in the provided documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 50,
+          "uncertainty": 50,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is ambiguous and lacks context, making it difficult to determine the user's intent.",
+          "output_bias": "The response is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it does not favor any particular group or perspective."
+        },
+        "explainability": {
+          "reasoning_trace": "The AI response indicates that it cannot find information about Python in the provided documents, which aligns with the context given."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:19:21.976Z"
+        }
+      }
+    },
+    "previousHash": "ddf52cd195b9d51ab81351b99c6ce8c468dc176d40f563955acc7dc393f25214",
+    "hash": "616ada612798f23488561db2b33f720002d71dd50ffade645e388a975fa39bed"
+  },
+  {
+    "id": "686e3b5c-4a75-416d-a37c-d31ebccf0b66",
+    "timestamp": "2026-02-05T16:19:01.822Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "python??"
+    },
+    "previousHash": "438b78aab8f57c09a3b824b03a88e3a29368db2d0376736e20248c9d618425b4",
+    "hash": "ddf52cd195b9d51ab81351b99c6ce8c468dc176d40f563955acc7dc393f25214"
+  },
+  {
+    "id": "1e34835f-671e-4fdc-9a5a-8de365ada3df",
+    "timestamp": "2026-02-05T16:18:50.627Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Hello! How can I assist you today?",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 95,
+          "uncertainty": 5,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query 'hii' is a casual greeting, possibly indicating a desire for interaction.",
+          "output_bias": "The response is a standard greeting with no apparent bias.",
+          "fairness": "The response is fair and neutral, treating the user's greeting with a polite and helpful reply."
+        },
+        "explainability": {
+          "reasoning_trace": "The response is a standard greeting and offer of assistance, which is a typical and appropriate reaction to a casual greeting."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:18:50.627Z"
+        }
+      }
+    },
+    "previousHash": "225323230d4f7153f27cbd300493dbc0096ccb27c72db2ac2275e3647ba7c7f6",
+    "hash": "438b78aab8f57c09a3b824b03a88e3a29368db2d0376736e20248c9d618425b4"
+  },
+  {
+    "id": "1d3a9005-01ef-41ad-b9f3-4d0a614d12d8",
+    "timestamp": "2026-02-05T16:18:30.487Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "hii"
+    },
+    "previousHash": "5e04119fc3ed6860a06693cc1541146e91a59807be21f90516981469212a78e5",
+    "hash": "225323230d4f7153f27cbd300493dbc0096ccb27c72db2ac2275e3647ba7c7f6"
+  },
+  {
+    "id": "e2a1054c-7c26-4eb7-9b10-903e0c8bd8f1",
+    "timestamp": "2026-02-05T16:18:05.395Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "governance": {
+        "hallucination": false,
+        "contradiction": false,
+        "scores": {
+          "confidence": 0,
+          "uncertainty": 100,
+          "risk": 0
+        },
+        "bias_analysis": {
+          "prompt_bias": "The query is neutral and does not exhibit any bias.",
+          "output_bias": "The response is neutral and does not exhibit any bias.",
+          "fairness": "The response is fair as it does not favor any group or individual."
+        },
+        "explainability": {
+          "reasoning_trace": "The response indicates that the information requested is not available in the provided context, which is a straightforward interpretation of the lack of relevant content."
+        },
+        "trace": {
+          "model": "arcee-ai/trinity-large-preview:free",
+          "parameters": {
+            "temperature": "default"
+          },
+          "dataSources": "",
+          "timestamp": "2026-02-05T16:18:05.395Z"
+        }
+      }
+    },
+    "previousHash": "e057d2942baf9a0d93b6e7b2c1acac4d8c9e5927f8f25e1736ff1d9a178bc093",
+    "hash": "5e04119fc3ed6860a06693cc1541146e91a59807be21f90516981469212a78e5"
+  },
+  {
+    "id": "ea2def26-15f9-49c7-9cb7-7b6601a5a305",
+    "timestamp": "2026-02-05T16:17:47.433Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "explain about c++"
+    },
+    "previousHash": "177ecccc49ab724bf70d4af9bb44f4952b64eed9cb3159a0a0392950939c7023",
+    "hash": "e057d2942baf9a0d93b6e7b2c1acac4d8c9e5927f8f25e1736ff1d9a178bc093"
+  },
+  {
+    "id": "b18b765c-c755-4804-9b85-16b682dddefe",
+    "timestamp": "2026-02-05T16:13:16.562Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Python is a high-level, interpreted programming language that is widely used for web development, data analysis, artificial intelligence, and scientific computing. It is known for its simplicity, readability, and ease of use, making it a popular choice for beginners and experienced programmers alike. Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It has a large standard library and a vast ecosystem of third-party packages, making it a versatile language for a wide range of applications.",
+      "validation": {
+        "confidenceScore": 10,
+        "isUnsupported": true,
+        "riskLevel": "High"
+      },
+      "bias": {
+        "hasBias": false,
+        "flaggedTerms": [],
+        "mitigationApplied": "None"
+      }
+    },
+    "previousHash": "2feea34757c86becb934beaf8879ca9aec3aac6071a5c1a19202df740f574bae",
+    "hash": "177ecccc49ab724bf70d4af9bb44f4952b64eed9cb3159a0a0392950939c7023"
+  },
+  {
+    "id": "7169893a-1289-4b59-bfc8-80f6c7491721",
+    "timestamp": "2026-02-05T16:13:11.054Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "explain about python"
+    },
+    "previousHash": "45667d2978f2371740ec6a6d0048009b1c78dfb4431f55de14dd21dd77641ab8",
+    "hash": "2feea34757c86becb934beaf8879ca9aec3aac6071a5c1a19202df740f574bae"
+  },
+  {
+    "id": "60bb329a-b95b-4f9c-abf1-17f3979223b2",
+    "timestamp": "2026-02-05T16:12:52.847Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "I cannot find this in the documents.",
+      "validation": {
+        "confidenceScore": 10,
+        "isUnsupported": true,
+        "riskLevel": "High"
+      },
+      "bias": {
+        "hasBias": false,
+        "flaggedTerms": [],
+        "mitigationApplied": "None"
+      }
+    },
+    "previousHash": "e152f553033666f45c1089cf3eacc82cdcf1f44d56e7938081eb5767728f6b4a",
+    "hash": "45667d2978f2371740ec6a6d0048009b1c78dfb4431f55de14dd21dd77641ab8"
+  },
+  {
+    "id": "055f6085-1b32-476c-b3f9-b90d20450b66",
+    "timestamp": "2026-02-05T16:12:48.335Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "tell me about todays news"
+    },
+    "previousHash": "f10a77ccf427dab41c2d8d1b8db06a1ddec5f87913e930cccfb339d3e39de348",
+    "hash": "e152f553033666f45c1089cf3eacc82cdcf1f44d56e7938081eb5767728f6b4a"
+  },
+  {
+    "id": "b58a46bd-c32e-4d1a-ba1d-f92aeb76e427",
+    "timestamp": "2026-02-05T16:12:19.799Z",
+    "user": "admin@org.com",
+    "action": "CHAT_RESPONSE",
+    "details": {
+      "response": "Hello! How can I assist you today?",
+      "validation": {
+        "confidenceScore": 10,
+        "isUnsupported": true,
+        "riskLevel": "High"
+      },
+      "bias": {
+        "hasBias": false,
+        "flaggedTerms": [],
+        "mitigationApplied": "None"
+      }
+    },
+    "previousHash": "84b79a3532ce99fe49494c51409e3a8b566b8f0e212b786fff75a32878387c6a",
+    "hash": "f10a77ccf427dab41c2d8d1b8db06a1ddec5f87913e930cccfb339d3e39de348"
+  },
+  {
+    "id": "9e28a4d0-9912-4e14-a0b0-7ad6ef05657f",
+    "timestamp": "2026-02-05T16:11:54.118Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "hii"
+    },
+    "previousHash": "4f5b1238005881743f2487497480582518d23c88ff81f7cc8b0b0e0472401245",
+    "hash": "84b79a3532ce99fe49494c51409e3a8b566b8f0e212b786fff75a32878387c6a"
+  },
+  {
+    "id": "62a0181e-f56b-4670-b5c9-a8a60f5728e9",
+    "timestamp": "2026-02-05T16:08:30.439Z",
+    "user": "add@gmail.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "hii"
+    },
+    "hash": "4f5b1238005881743f2487497480582518d23c88ff81f7cc8b0b0e0472401245"
+  },
+  {
+    "id": "c5993d17-bc3e-4745-ac37-a63c1e8cbeb0",
+    "timestamp": "2026-02-05T16:07:48.272Z",
+    "user": "admin",
+    "action": "ADD_STAFF",
+    "details": "Added staff add@gmail.com"
+  },
+  {
+    "id": "3cf11d0c-1fd9-4340-9bc6-ba3355fdce3e",
+    "timestamp": "2026-02-05T16:06:50.764Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "hii"
+    },
+    "previousHash": "7738fc81e1f58a1ebc8c1fa145890d91bbaedc2b7fbecb2e3a54571d793baf09",
+    "hash": "5f8e17f5a36cac5a3850d53cb82e5a4fde8d529cf8c28c5bff230c3fa01f67ad"
+  },
+  {
+    "id": "8560c5cd-9b4f-48c3-b6a6-6299dc387b4d",
+    "timestamp": "2026-02-05T16:03:30.388Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "hii"
+    },
+    "previousHash": "1be2c44f9d9400d992ed534aa24c25dd6251fabe88fd6570639a0c7ad7098b93",
+    "hash": "7738fc81e1f58a1ebc8c1fa145890d91bbaedc2b7fbecb2e3a54571d793baf09"
+  },
+  {
+    "id": "90d51d7a-48cf-4ca2-bc26-a7d75281d7db",
+    "timestamp": "2026-02-05T15:54:35.900Z",
+    "user": "admin@org.com",
+    "action": "CHAT_REQUEST",
+    "details": {
+      "query": "hii"
+    },
+    "previousHash": "GENESIS_HASH",
+    "hash": "1be2c44f9d9400d992ed534aa24c25dd6251fabe88fd6570639a0c7ad7098b93"
+  }
+]

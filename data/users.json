@@ -1,0 +1,64 @@
+[
+  {
+    "id": "admin-001",
+    "name": "System Admin",
+    "email": "admin@org.com",
+    "password": "$2a$10$.k8ZRcj1JRZHt.aZL38IUOCODfMzfo93X3pHL7qhUEb8tYaC4SZo6",
+    "role": "admin"
+  },
+  {
+    "id": "5a789b29-0a1a-425e-b7e6-8824c2ab5710",
+    "name": "add",
+    "email": "add@mail",
+    "password": "$2a$10$WeBVPXrjNqu82fgFUl0c3.qOFAwMYkhXkQM3j739aNikUNHDToFC2",
+    "role": "staff"
+  },
+  {
+    "id": "92d6c494-7d4a-48ea-8ed9-74457543d8bd",
+    "name": "hii",
+    "email": "hii",
+    "password": "$2a$10$24G5OCREdaHf90dXUpsBXeHvVcK/ord6afpOQZeuocJy0BMuW5BRy",
+    "role": "admin",
+    "orgDetails": {
+      "name": "hii",
+      "location": "tvm",
+      "photo": ""
+    }
+  },
+  {
+    "id": "c5da052c-2a5a-4b2c-9d1d-152944afe73d",
+    "name": "kii",
+    "email": "kii",
+    "password": "$2a$10$hcvRNiqbfcgYT8/MtRpyMuPsypodUpESUa342wFE8N6TGBA0bUm9W",
+    "role": "staff"
+  },
+  {
+    "id": "7723a37a-80fd-4fbe-99d5-664a906bfd0b",
+    "name": "hii",
+    "email": "fth",
+    "password": "$2a$10$9kveQ52J48Wk7qVmLOqoFu/yCJv9GKFI.2.zXysEQfpdedhjpO22q",
+    "role": "staff"
+  },
+  {
+    "id": "201834d7-741b-44bd-abad-8051933cad9d",
+    "name": "hii",
+    "email": "14",
+    "password": "$2a$10$SzQwXtJHUtAfDxCLuYcUw.SvhQwQ2//0/stlHeIH4g/.2xiu9LLKu",
+    "role": "staff"
+  },
+  {
+    "id": "ce69d7b7-6d42-4790-a47d-eca515d869a8",
+    "name": "123",
+    "email": "123",
+    "password": "$2a$10$I/kIQWtU1AKNfnGGCMj/e.SGnlz372W9zWxsNy4l0qAKJLZy3j6qK",
+    "role": "staff"
+  },
+  {
+    "id": "bdea8a30-ad3b-4c0a-92a9-e404e4bdccdb",
+    "staffId": "STF-3267",
+    "name": "1",
+    "email": "1",
+    "password": "$2a$10$zw1JyIQKPZbudVlsvf1M4OZ1nn0LpDXgcKHyGt6a2zqrMtoPFP/u2",
+    "role": "staff"
+  }
+]

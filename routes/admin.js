@@ -1,0 +1,335 @@
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs'); // Still needed for file deletion
+const bcrypt = require('bcryptjs');
+const { v4: uuidv4 } = require('uuid');
+const { logAction } = require('../utils/logger');
+const verifyToken = require('../middleware/auth'); // Import Middleware
+
+// Models
+const USER = require('../models/User');
+const DOC = require('../models/Document');
+const ANNOUNCE = require('../models/Announcement');
+const LLM_CONFIG = require('../models/LLMConfig');
+
+// Multer Setup
+const storage = multer.diskStorage({
+    destination: './uploads/',
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+const upload = multer({ storage: storage });
+
+// 1. Get Stats (Dashboard)
+router.get('/stats', async (req, res) => {
+    try {
+        const totalStaff = await USER.countDocuments({ role: 'staff' });
+        const totalDocs = await DOC.countDocuments();
+
+        res.json({
+            stats: {
+                totalStaff,
+                totalDocuments: totalDocs,
+                systemStatus: 'Online'
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 2. Upload Document
+router.post('/upload', upload.single('file'), async (req, res) => {
+    try {
+        if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
+
+        logAction('UPLOAD_START', `Started upload: ${req.file.originalname}`, { email: 'admin@org.com', role: 'admin' });
+
+        const newDoc = await DOC.create({
+            name: req.file.originalname,
+            path: req.file.path,
+            type: path.extname(req.file.originalname).substring(1),
+            size: req.file.size,
+            uploadedBy: 'admin' // In real app, from token
+        });
+
+        // Trigger Log and potentially RAG indexing here (missing RAG service refactor for now)
+        // Note: keeping it simple for migration step.
+
+        logAction('UPLOAD_SUCCESS', `Uploaded ${newDoc.name}`, { email: 'admin@org.com', role: 'admin' });
+
+        res.json({ message: 'File uploaded successfully', document: newDoc });
+    } catch (error) {
+        logAction('UPLOAD_FAIL', error.message, { email: 'admin@org.com', role: 'admin' });
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 3. Get Documents
+router.get('/documents', async (req, res) => {
+    try {
+        const docs = await DOC.find().sort({ uploadedAt: -1 });
+        res.json(docs);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Delete Document
+router.delete('/documents/:id', verifyToken, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const doc = await DOC.findById(id);
+        if (!doc) return res.status(404).json({ error: 'Document not found' });
+
+        // Delete from Disk
+        const filePath = path.join(__dirname, '..', doc.path); // path is relative e.g. 'uploads/...'
+        if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
+        }
+
+        await DOC.findByIdAndDelete(id);
+        logAction('DELETE_DOC', `Deleted ${doc.name}`, { email: req.user.email || 'admin', role: 'admin' });
+
+        res.json({ message: 'Document deleted' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 4. Add Staff
+router.post('/add-staff', verifyToken, async (req, res) => {
+    try {
+        const { name, email } = req.body;
+        const adminId = req.user.id; // Get Admin ID from Token
+
+        // Auto-generate password
+        const password = Math.random().toString(36).slice(-8);
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const staffId = 'STF-' + Math.floor(1000 + Math.random() * 9000);
+
+        const newUser = await USER.create({
+            name,
+            email,
+            password: hashedPassword,
+            role: 'staff',
+            staffId,
+            adminId: adminId // Link to Admin
+        });
+
+        logAction('ADD_STAFF', `Added staff ${email} (${staffId})`, { email: req.user.email, role: 'admin' });
+
+        // Simulate Email Sending
+        console.log(`[EMAIL SIM] To: ${email} | Subject: Welcome! | Body: Your ID: ${staffId}, Pass: ${password}`);
+
+        res.json({
+            message: 'Staff added successfully',
+            credentials: { email, password, staffId }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 5. Get Users (Staff)
+router.get('/users', async (req, res) => {
+    try {
+        const users = await USER.find({ role: 'staff' });
+        // Map to format frontend expects if needed (Mongoose docs are close enough to POJO)
+        res.json(users.map(u => ({
+            id: u._id, // Frontend uses 'id'
+            name: u.name,
+            email: u.email,
+            role: u.role,
+            staffId: u.staffId
+        })));
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 6. Delete User
+router.delete('/users/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await USER.findByIdAndDelete(id);
+
+        if (!user) return res.status(404).json({ error: 'User not found' });
+
+        logAction('REMOVE_STAFF', `Removed staff ${user.email}`, { email: 'admin@org.com', role: 'admin' });
+
+        res.json({ message: 'User removed successfully' });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 7. Update Profile (Org Details)
+// 7. Update Profile (Org Details)
+router.post('/profile', upload.single('photo'), async (req, res) => {
+    try {
+        const { email, orgName, location, about } = req.body;
+
+        const user = await USER.findOne({ email });
+        if (!user) return res.status(404).json({ error: 'User not found' });
+
+        // Initialize if missing
+        if (!user.orgDetails) user.orgDetails = {};
+
+        // Update fields individually to avoid overwriting the whole object
+        if (orgName) user.orgDetails.name = orgName;
+        if (location) user.orgDetails.location = location;
+        if (about) user.orgDetails.about = about;
+
+        // Handle Photo Path
+        if (req.file) {
+            // Normalize path to forward slashes
+            let photoPath = req.file.path.replace(/\\/g, '/');
+            // Ensure it starts with 'uploads/' for strict serving
+            if (photoPath.startsWith('uploads/')) {
+                // It's already good (e.g. uploads/file.jpg)
+            } else if (!photoPath.includes('/')) {
+                // If simple filename, prepend
+                photoPath = 'uploads/' + photoPath;
+            }
+            user.orgDetails.photo = photoPath;
+        }
+
+        // Mongoose requires marking Mixed/Nested types as modified if we mutate them directly
+        user.markModified('orgDetails');
+
+        await user.save();
+
+        logAction('UPDATE_CONFIG', 'Updated Organization Profile', { email, role: 'admin' });
+
+        res.json({
+            message: 'Profile updated', user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                orgDetails: user.orgDetails
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 8. Announcement
+router.post('/announce', verifyToken, async (req, res) => {
+    try {
+        const { title, message, author } = req.body;
+
+        const newAnnounce = await ANNOUNCE.create({
+            title,
+            message,
+            author, // or req.user.email
+            details: { title, message } // Storing in details as well to match frontend log structure expecting 'details'
+        });
+
+        logAction('ANNOUNCEMENT', `Posted: ${title}`, { email: author, role: 'admin' });
+        res.json({ message: 'Announcement posted', announcement: newAnnounce });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 9. Get Announcements
+router.get('/announcements', async (req, res) => {
+    try {
+        const list = await ANNOUNCE.find().sort({ timestamp: -1 }).limit(10);
+        res.json(list);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// 10. Staff Feed (Announcements + Documents)
+router.get('/feed', verifyToken, async (req, res) => {
+    try {
+        const user = req.user;
+        let adminEmail = 'admin@org.com'; // Default
+
+        // If staff, find their admin
+        if (user.role === 'staff') {
+            const staffUser = await USER.findById(user.id);
+            if (staffUser && staffUser.adminId) {
+                const admin = await USER.findById(staffUser.adminId);
+                if (admin) adminEmail = admin.email;
+            }
+        } else {
+            adminEmail = user.email; // If admin is viewing feed
+        }
+
+        // Fetch Announcements from Admin
+        const announcements = await ANNOUNCE.find({ author: adminEmail }).sort({ timestamp: -1 }).limit(10);
+
+        // Fetch Documents from Admin (assuming uploadedBy stores 'admin' or email, currently hardcoded 'admin' in upload route)
+        // In a real multi-tenant app, uploadedBy should be the admin's ID or Email. 
+        // For this fix, we'll fetch all docs for now or strict match if we update upload logic.
+        // Let's being permissive to ensure they see docs.
+        const docs = await DOC.find().sort({ uploadedAt: -1 }).limit(10);
+
+        // Combine
+        const feed = [
+            ...announcements.map(a => ({
+                type: 'ANNOUNCEMENT',
+                action: 'ANNOUNCEMENT',
+                details: a.details || { title: a.title, message: a.message },
+                timestamp: a.timestamp
+            })),
+            ...docs.map(d => ({
+                type: 'DOCUMENT',
+                action: 'DOCUMENT_UPLOAD',
+                details: d.name,
+                timestamp: d.uploadedAt
+            }))
+        ];
+
+        // Sort combined feed
+        feed.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+        res.json(feed);
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
+// 9. LLM Config
+router.post('/llm-config', verifyToken, async (req, res) => {
+    try {
+        const { prompt, enableSearch, enableRAG } = req.body;
+        // Upsert config (always keep one singleton config for simplicity in this MVP)
+        let config = await LLM_CONFIG.findOne();
+        if (!config) {
+            config = new LLM_CONFIG({ prompt, enableSearch, enableRAG });
+        } else {
+            if (prompt !== undefined) config.prompt = prompt;
+            if (enableSearch !== undefined) config.enableSearch = enableSearch;
+            if (enableRAG !== undefined) config.enableRAG = enableRAG;
+            config.updatedAt = Date.now();
+        }
+        await config.save();
+
+        logAction('UPDATE_CONFIG', 'Updated LLM System Prompt', { email: req.user.email, role: 'admin' });
+        res.json({ message: 'Config updated', config });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+router.get('/llm-config', async (req, res) => {
+    try {
+        const config = await LLM_CONFIG.findOne() || new LLM_CONFIG(); // Default if none
+        res.json(config);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+module.exports = router;

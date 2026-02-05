@@ -21,6 +21,16 @@ router.post('/login', async (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const { email, password, orgName } = req.body;
+
+        // Validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({ error: 'Invalid email format' });
+        }
+        if (password.length < 6) {
+            return res.status(400).json({ error: 'Password must be at least 6 characters' });
+        }
+
         const result = await authService.signup(email, password, orgName);
 
         logAction('SIGNUP_SUCCESS', `New organization: ${orgName}`, { email: result.user.email, role: 'admin' });

@@ -42,6 +42,51 @@ router.get('/users', verifyToken, async (req, res) => {
     }
 });
 
+// 6. Add Staff Implementation
+router.post('/add-staff', verifyToken, async (req, res) => {
+    try {
+        const { name, email } = req.body;
+
+        // Check if user exists
+        const existingUser = await USER.findOne({ email });
+        if (existingUser) return res.status(400).json({ error: 'User already exists' });
+
+        // Generate Credentials
+        const password = Math.random().toString(36).slice(-8); // Random 8 char password
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const staffId = `STF-${uuidv4().substring(0, 8).toUpperCase()}`;
+
+        const newStaff = await USER.create({
+            name,
+            email,
+            password: hashedPassword,
+            role: 'staff',
+            staffId,
+            adminId: req.user.id, // Link to current Admin
+            orgDetails: req.user.orgDetails // Inherit Org Details (Optional)
+        });
+
+        logAction('ADD_STAFF', `Added staff: ${name}`, { email: req.user.email, role: 'admin' });
+
+        res.json({
+            message: 'Staff added successfully',
+            credentials: {
+                staffId,
+                email,
+                password // Send back to Admin to share
+            },
+            user: {
+                id: newStaff._id,
+                name: newStaff.name,
+                email: newStaff.email,
+                role: 'staff'
+            }
+        });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 // 1. Get Stats (Dashboard)
 router.get('/stats', verifyToken, async (req, res) => {
     try {
@@ -73,7 +118,8 @@ router.post('/upload', verifyToken, upload.single('file'), async (req, res) => {
             path: req.file.path,
             type: path.extname(req.file.originalname).substring(1),
             size: req.file.size,
-            uploadedBy: req.user.email // Store Admin Email as Owner
+            uploadedBy: req.user.email, // Store Admin Email as Owner
+            description: req.body.description || ''
         });
 
         logAction('UPLOAD_SUCCESS', `Uploaded ${newDoc.name}`, { email: req.user.email, role: req.user.role });
@@ -85,7 +131,15 @@ router.post('/upload', verifyToken, upload.single('file'), async (req, res) => {
     }
 });
 
-// ... (skip fetch docs) ...
+// 3. Get Documents
+router.get('/documents', verifyToken, async (req, res) => {
+    try {
+        const docs = await DOC.find({ uploadedBy: req.user.email }).sort({ uploadedAt: -1 });
+        res.json(docs);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 // 7. Update Profile (Org Details)
 router.post('/profile', verifyToken, upload.single('photo'), async (req, res) => {
@@ -142,12 +196,13 @@ router.post('/profile', verifyToken, upload.single('photo'), async (req, res) =>
 // 8. Announcement
 router.post('/announce', verifyToken, async (req, res) => {
     try {
-        const { title, message, author } = req.body;
+        const { title, message } = req.body;
+        const author = req.user.email; // Security: Author is always the logged-in admin
 
         const newAnnounce = await ANNOUNCE.create({
             title,
             message,
-            author, // or req.user.email
+            author,
             details: { title, message } // Storing in details as well to match frontend log structure expecting 'details'
         });
 
@@ -174,19 +229,36 @@ router.get('/feed', verifyToken, async (req, res) => {
         const user = req.user;
         let adminEmail = 'admin@org.com'; // Default
 
+        // Fetch Announcements from Admin
+        console.log(`[FEED DEBUG] Fetching feed for User Role: ${user.role}, User ID: ${user.id}`);
+
         // If staff, find their admin
         if (user.role === 'staff') {
             const staffUser = await USER.findById(user.id);
-            if (staffUser && staffUser.adminId) {
-                const admin = await USER.findById(staffUser.adminId);
-                if (admin) adminEmail = admin.email;
+            if (staffUser) {
+                console.log(`[FEED DEBUG] Staff Found. AdminID: ${staffUser.adminId}`);
+                if (staffUser.adminId) {
+                    const admin = await USER.findById(staffUser.adminId);
+                    if (admin) {
+                        adminEmail = admin.email;
+                        console.log(`[FEED DEBUG] Resolved Admin Email: ${adminEmail}`);
+                    } else {
+                        console.log(`[FEED DEBUG] Admin Not Found for ID: ${staffUser.adminId}`);
+                    }
+                } else {
+                    console.log(`[FEED DEBUG] Staff has no AdminID linked.`);
+                }
+            } else {
+                console.log(`[FEED DEBUG] Staff User Not Found in DB.`);
             }
         } else {
             adminEmail = user.email; // If admin is viewing feed
+            console.log(`[FEED DEBUG] User is Admin. Using Email: ${adminEmail}`);
         }
 
         // Fetch Announcements from Admin
         const announcements = await ANNOUNCE.find({ author: adminEmail }).sort({ timestamp: -1 }).limit(10);
+        console.log(`[FEED DEBUG] Found ${announcements.length} announcements for author ${adminEmail}`);
 
         // Fetch Documents strictly for this Organization
         const docs = await DOC.find({ uploadedBy: adminEmail }).sort({ uploadedAt: -1 }).limit(10);

@@ -26,7 +26,10 @@ async function parseDocuments(ownerEmail) {
 
     for (const doc of docs) {
         const filePath = path.join(__dirname, '..', doc.path);
-        if (!fs.existsSync(filePath)) continue;
+        if (!fs.existsSync(filePath)) {
+            console.warn(`[RAG Warning] File not found: ${filePath}. Ephemeral storage might have wiped it.`);
+            continue;
+        }
 
         let content = '';
         try {
@@ -50,8 +53,8 @@ async function parseDocuments(ownerEmail) {
             const chunks = content.match(/[\s\S]{1,1000}/g) || [];
             chunks.forEach((chunk, i) => {
                 context.push({
-                    text: chunk,
-                    metadata: { source: doc.name, page: i + 1 }
+                    text: `[Source: ${doc.name}] [Description: ${doc.description || 'None'}] ${chunk}`,
+                    metadata: { source: doc.name, page: i + 1, description: doc.description }
                 });
             });
         }
@@ -60,16 +63,17 @@ async function parseDocuments(ownerEmail) {
 }
 
 // Helper: Web Search
-const google = require('googlethis');
+const DDG = require('duck-duck-scrape');
 
 async function performWebSearch(query) {
     try {
-        const options = { page: 0, safe: false, additional_params: { hl: 'en' } };
-        const response = await google.search(query, options);
+        const searchResults = await DDG.search(query, {
+            safeSearch: DDG.SafeSearchType.OFF
+        });
 
         let results = [];
-        if (response.results && response.results.length > 0) {
-            results = response.results.slice(0, 3).map(r => ({
+        if (searchResults.results && searchResults.results.length > 0) {
+            results = searchResults.results.slice(0, 3).map(r => ({
                 title: r.title,
                 description: r.description,
                 url: r.url,
@@ -77,28 +81,16 @@ async function performWebSearch(query) {
             }));
         }
 
-        // Fallback if blocked/empty
+        // Fallback
         if (results.length === 0) {
-            console.log("Search blocked/empty, using fallback.");
-            results = [
-                {
-                    title: "Simulated Search Result for " + query,
-                    description: "Unable to reach external search engine due to network restrictions. This is a placeholder result to demonstrate functionality.",
-                    url: "https://example.com/fallback",
-                    source: 'Simulation'
-                }
-            ];
+            console.log("DDG returned no results.");
+            // Try a backup or just return empty
         }
         return results;
 
     } catch (e) {
-        console.error("Search Error:", e);
-        return [{
-            title: "Simulated Search Result (Error)",
-            description: "Search failed due to: " + e.message,
-            url: "https://example.com/error",
-            source: 'Simulation'
-        }];
+        console.error("Search Error (DDG):", e);
+        return [];
     }
 }
 

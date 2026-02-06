@@ -42,10 +42,23 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/tasks', taskRoutes);
 
+const verifyToken = require('./middleware/auth');
+const User = require('./models/User');
 const Log = require('./models/Log');
-app.get('/api/logs', async (req, res) => {
+
+app.get('/api/logs', verifyToken, async (req, res) => {
     try {
-        const logs = await Log.find().sort({ timestamp: -1 }).limit(100);
+        // SECURITY FIX: Only fetch logs for THIS Admin and their Staff
+        const adminEmail = req.user.email;
+
+        // Find staff belonging to this admin
+        const staffUsers = await User.find({ adminId: req.user.id });
+        const staffEmails = staffUsers.map(u => u.email);
+
+        // Allow logs from Admin OR Staff
+        const allowedEmails = [adminEmail, ...staffEmails];
+
+        const logs = await Log.find({ user: { $in: allowedEmails } }).sort({ timestamp: -1 }).limit(100);
         res.json(logs);
     } catch (error) {
         res.status(500).json({ error: error.message });

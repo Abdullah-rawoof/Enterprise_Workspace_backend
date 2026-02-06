@@ -43,16 +43,17 @@ router.get('/users', verifyToken, async (req, res) => {
 });
 
 // 1. Get Stats (Dashboard)
-router.get('/stats', async (req, res) => {
+router.get('/stats', verifyToken, async (req, res) => {
     try {
-        const totalStaff = await USER.countDocuments({ role: 'staff' });
-        const totalDocs = await DOC.countDocuments();
+        // SECURITY FIX: Count only MY staff and MY docs
+        const totalStaff = await USER.countDocuments({ role: 'staff', adminId: req.user.id });
+        const totalDocs = await DOC.countDocuments({ uploadedBy: req.user.email });
 
         res.json({
             stats: {
                 totalStaff,
                 totalDocuments: totalDocs,
-                systemStatus: 'Online'
+                systemStatus: 'Operational'
             }
         });
     } catch (error) {
